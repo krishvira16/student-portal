@@ -1,7 +1,7 @@
 const student = require('../models/student');
 
 exports.getProfile = function (req, res) {
-    // use student.getProfile() and send the profile
+    // use student.getProfile() and send the a
 };
 
 exports.getSubjectDetails = function (req, res) {
