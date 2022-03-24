@@ -15,7 +15,18 @@ process.on('dbReady', function() {
 
 const session = require('express-session');
 var millisecondsInTwoDays = 1000 * 60 * 60 * 24 * 2;
-//app.use(); create session middleware and use it
+app.use(session({
+    cookie: {
+        httpOnly: true,
+        maxAge: millisecondsInTwoDays,
+        path: '/api'
+    },
+    name: 'sessionId',
+    resave: false,
+    rolling: true,
+    saveUninitialized: false,
+    secret: process.env.SESSION_SECRET
+}));
 
 app.use(express.json());
 
