@@ -1,17 +1,61 @@
 const student = require('../models/student');
 
 exports.getProfile = function (req, res) {
-    // use student.getProfile() and send the a
+    app.use(session({
+        cookie: {
+            httpOnly: true,
+            maxAge: millisecondsInTwoDays,
+            path: '/api'
+        },
+        name: 'sessionId',
+        resave: false,
+        rolling: true,
+        saveUninitialized: false,
+        secret: process.env.SESSION_SECRET
+    }));
 };
 
 exports.getSubjectDetails = function (req, res) {
-    // getSubjectDetails()
+    app.use(session({
+        cookie: {
+            httpOnly: true,
+            maxAge: millisecondsInTwoDays,
+            path: '/api'
+        },
+        name: 'sessionId',
+        resave: false,
+        rolling: true,
+        saveUninitialized: false,
+        secret: process.env.SESSION_SECRET
+    }));
 };
 
 exports.getAssessment = function (req, res) {
-    // getAssessment() - use assessment param
+    app.use(session({
+        cookie: {
+            httpOnly: true,
+            maxAge: millisecondsInTwoDays,
+            path: '/api'
+        },
+        name: 'sessionId',
+        resave: false,
+        rolling: true,
+        saveUninitialized: false,
+        secret: process.env.SESSION_SECRET
+    }));
 };
 
 exports.getGrades = function (req, res) {
-    // getGrades()
+    app.use(session({
+        cookie: {
+            httpOnly: true,
+            maxAge: millisecondsInTwoDays,
+            path: '/api'
+        },
+        name: 'sessionId',
+        resave: false,
+        rolling: true,
+        saveUninitialized: false,
+        secret: process.env.SESSION_SECRET
+    }));
 };
