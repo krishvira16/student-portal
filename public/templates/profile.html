@@ -1,0 +1,16 @@
+<h4>Profile:</h4><br>
+<table class="table container-sm" data-ng-show="showProfile">
+    <tr><td>Student Id:</td><td>{{profile.student_id}}</td></tr>
+    <tr><td>Name:</td><td>{{profile.student_name}}</td></tr>
+    <tr><td>Course:</td><td>{{profile.course}}</td></tr>
+    <tr><td>Stream:</td><td>{{profile.stream}}</td></tr>
+    <tr><td>Semester:</td><td>{{profile.sem}}</td></tr>
+    <!--
+    Student Id: {{profile.student_id}}<br><br>
+    Name: {{profile.student_name}}<br><br>
+    Course: {{profile.course}}<br><br>
+    Stream: {{profile.stream}}<br><br>
+    Semester: {{profile.sem}}<br><br>
+    -->
+</table>
+<span data-ng-show="!showProfile">Loading Profile...</span>

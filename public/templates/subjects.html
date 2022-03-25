@@ -1,0 +1,16 @@
+<h4>Subjects:</h4><br>
+<div data-ng-if="showSubjects">
+    <table class="table">
+        <thead>
+            <th>Subject Id</th>
+            <th>Name</th>
+            <th>Type of Subject</th>
+        </thead>
+        <tr data-ng-repeat="subjectId in subjectIds">
+            <td>{{subjectId}}</td>
+            <td>{{subjectDetails[subjectId].name}}</td>
+            <td>{{subjectType[subjectDetails[subjectId].type]}}</td>
+        </tr>
+    </table>
+</div>
+<span data-ng-show="!showSubjects">Loading Subject Details...</span>

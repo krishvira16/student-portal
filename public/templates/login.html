@@ -1,0 +1,20 @@
+<h4>Login:</h4><br>
+<form name="loginForm" data-ng-submit="login()" novalidate>
+    <div>
+        <label for="student_id">Student ID:</label>
+        <input class="form-control" type="number" id="student_id" name="student_id" value="" data-ng-model="student_id" data-ng-required="true">
+        <span class="text-danger" data-ng-show="loginForm.student_id.$error.required && (loginForm.student_id.$touched || loginForm.$submitted)">Please fill out this field</span>
+        <span class="text-danger" data-ng-show="loginForm.student_id.$error.number && (loginForm.student_id.$touched || loginForm.$submitted)">Please enter a valid number</span>
+    </div>
+    <br>
+    <div>
+        <label for="password">Password:</label>
+        <input class="form-control" type="password" id="password" name="password" value="" data-ng-model="password" data-ng-required="true">
+        <span class="text-danger" data-ng-show="loginForm.password.$error.required && (loginForm.password.$touched || loginForm.$submitted)">Please fill out this field</span>
+    </div>
+    <br>
+    <button class="btn btn-primary" type="submit" name="submitButton">Login</button>
+</form>
+<br>
+<span class="text-success" data-ng-show="loginSuccess">Login Successful. Redirecting...</span>
+<span class="text-danger" data-ng-show="loginFailure">Login Failed. {{error.message}}</span>

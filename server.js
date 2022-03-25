@@ -35,6 +35,6 @@ app.use(express.static('./public'));
 const apiRouter = require('./app/routes/api');
 app.use('/api', apiRouter);
 
-app.get('/*', function (req, res) {
+app.get('/', function (req, res) {
     res.sendFile('/src/views/index.html', { root: process.cwd() });
 });

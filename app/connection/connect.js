@@ -1,7 +1,7 @@
 if (exports.dbcreated != true) {
     const { MongoClient, ServerApiVersion } = require('mongodb');
     const uri = "mongodb+srv://root:" + process.env.DBUSER_PASSWORD + "@cluster0.whaz5.mongodb.net/college?retryWrites=true&w=majority";
-    const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+    const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 }); // MongoDB CLient instance created
 
     client.connect(err => {
         if (err) throw err;

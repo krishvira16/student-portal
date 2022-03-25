@@ -1,0 +1,29 @@
+<h4>Grades:</h4><br>
+<div data-ng-if="showGrades">
+    <table class="table">
+        <thead>
+            <th>Subject</th>
+            <th>Mid-term Test-1</th>
+            <th>Mid-term Test-2</th>
+            <th>Term work</th>
+            <th>Term end exam</th>
+            <th>Total marks</th>
+            <th>Maximum marks</th>
+            <th>Percentage</th>
+        </thead>
+        <tr data-ng-repeat="grade in grades">
+            <td>{{subjectDetails[grade.subject_id].name}}</td>
+            <td>{{marks(grade.score[0])}}</td>
+            <td>{{marks(grade.score[1])}}</td>
+            <td>{{marks(grade.score[2])}}</td>
+            <td>{{marks(grade.score[3])}}</td>
+            <td>{{grade.total}}</td>
+            <td>{{subjectDetails[grade.subject_id].type == 'internal'? 50: 100}}</td>
+            <td>{{grade.percentage}}</td>
+        </tr>
+    </table>
+    <br>
+    <span>* - assessment marks not published for the subject</span><br>
+    <span>N/A - assessment does not apply for the subject</span>
+</div>
+<span data-ng-show="!showGrades">Loading Grades...</span>

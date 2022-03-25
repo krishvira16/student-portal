@@ -1,0 +1,30 @@
+<h4>Assessments:</h4><br>
+<div data-ng-if="showSubjects">
+    <form name="selectForm" novalidate>
+        <label for="assessment">Select Assessment:</label>
+        <select id="assessment" name="assessment" data-ng-model="assessment" value="" data-ng-required="true" data-ng-change="selectionMade(selectForm, assessment)">
+            <option value="m1">Mid-term Test-1</option>
+            <option value="m2">Mid-term Test-2</option>
+            <option value="term">Term work</option>
+            <option value="tee">Term end exam</option>
+        </select>
+    </form>
+    <br>
+    <div data-ng-if="showAssessment">
+        <table class="table">
+            <thead>
+                <th>Subject</th>
+                <th>Marks</th>
+            </thead>
+            <tr data-ng-repeat="score in scores">
+                <td>{{subjectDetails[score.subject_id].name}}</td>
+                <td>{{marks(score)}}</td>
+            </tr>
+        </table>
+        <br>
+        <span>* - assessment marks not published for the subject</span><br>
+        <span>N/A - assessment does not apply for the subject</span>
+    </div>
+    <span data-ng-show="!showAssessment && selectForm.$valid">Loading Assessment Details...</span>
+</div>
+<span data-ng-show="!showSubjects">Loading Subject Details...</span>

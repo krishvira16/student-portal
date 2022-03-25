@@ -1,61 +1,25 @@
 const student = require('../models/student');
 
 exports.getProfile = function (req, res) {
-    app.use(session({
-        cookie: {
-            httpOnly: true,
-            maxAge: millisecondsInTwoDays,
-            path: '/api'
-        },
-        name: 'sessionId',
-        resave: false,
-        rolling: true,
-        saveUninitialized: false,
-        secret: process.env.SESSION_SECRET
-    }));
+    student.getProfile(req.session.student_id, function (profile) {
+        res.send(profile);
+    });
 };
 
 exports.getSubjectDetails = function (req, res) {
-    app.use(session({
-        cookie: {
-            httpOnly: true,
-            maxAge: millisecondsInTwoDays,
-            path: '/api'
-        },
-        name: 'sessionId',
-        resave: false,
-        rolling: true,
-        saveUninitialized: false,
-        secret: process.env.SESSION_SECRET
-    }));
+    student.getSubjectDetails(req.session.student_id, function (subjectDetails) {
+        res.send(subjectDetails);
+    });
 };
 
 exports.getAssessment = function (req, res) {
-    app.use(session({
-        cookie: {
-            httpOnly: true,
-            maxAge: millisecondsInTwoDays,
-            path: '/api'
-        },
-        name: 'sessionId',
-        resave: false,
-        rolling: true,
-        saveUninitialized: false,
-        secret: process.env.SESSION_SECRET
-    }));
+    student.getAssessment(req.session.student_id, req.params.assessment, function (scores) {
+        res.send(scores);
+    });
 };
 
 exports.getGrades = function (req, res) {
-    app.use(session({
-        cookie: {
-            httpOnly: true,
-            maxAge: millisecondsInTwoDays,
-            path: '/api'
-        },
-        name: 'sessionId',
-        resave: false,
-        rolling: true,
-        saveUninitialized: false,
-        secret: process.env.SESSION_SECRET
-    }));
+    student.getGrades(req.session.student_id, function (grades) {
+        res.send(grades);
+    });
 };
