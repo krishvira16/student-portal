@@ -1,11 +1,11 @@
 if (exports.dbcreated != true) {
     const { MongoClient, ServerApiVersion } = require('mongodb');
-    const uri = "mongodb+srv://root:" + process.env.DBUSER_PASSWORD + "@cluster0.whaz5.mongodb.net/college?retryWrites=true&w=majority";
-    const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 }); // MongoDB CLient instance created
+    const uri = process.env.DB_CONNECTION_STRING;
+    const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 }); // MongoDB Client instance created
 
     client.connect(err => {
         if (err) throw err;
-        const db = client.db("college");
+        const db = client.db();
         exports.db = db;
         console.log('Connection to database established successfully.');
         process.emit('dbReady');
