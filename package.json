@@ -17,6 +17,10 @@
     "url": "https://github.com/krishvira16/student-portal/issues"
   },
   "homepage": "https://github.com/krishvira16/student-portal#readme",
+  "engines": {
+    "node": "^16.13.2",
+    "npm": "^8.1.2"
+  },
   "dependencies": {
     "bcrypt": "^5.0.1",
     "express": "^4.17.3",
